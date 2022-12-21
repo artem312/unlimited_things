@@ -25,3 +25,12 @@ extension IterableFirstWhere on Iterable {
     throw StateError('No element');
   }
 }
+
+extension IterableElementAtOrNull on Iterable {
+  T? elementAtOrNull<T>(int index) {
+    if (index < 0 || index >= length) {
+      return null;
+    }
+    return elementAt(index);
+  }
+}
