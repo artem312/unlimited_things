@@ -1,7 +1,7 @@
 import 'dart:async';
 
-extension IterableFirstWhere on Iterable {
-  T? firstWhereOrNull<T>(bool Function(T element) test) {
+extension IterableFirstWhere<T> on Iterable<T> {
+  T? firstWhereOrNull(bool Function(T element) test) {
     for (final element in this) {
       if (test(element)) {
         return element;
@@ -10,7 +10,7 @@ extension IterableFirstWhere on Iterable {
     return null;
   }
 
-  Future<T> firstWhereAsync<T>(
+  Future<T> firstWhereAsync(
     Future<bool> Function(T element) test, {
     FutureOr<T> Function()? orElse,
   }) async {
