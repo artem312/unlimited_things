@@ -1,14 +1,26 @@
 import 'dart:io';
 
+import 'package:unlimited_things/src/dart/extensions/strings_extensions.dart';
+
 extension DirectoryExtension on Directory {
   Directory getFolderFromList(List<String> subFolders) =>
       getFolder(subFolders.join(Platform.pathSeparator));
 
-  Directory getFolder(String subfolder) =>
-      Directory('$path${Platform.pathSeparator}$subfolder');
+  Directory getFolder(String subfolder) {
+    var formattedSubfolder = subfolder.pathEncoded;
+    if (formattedSubfolder.startsWith(Platform.pathSeparator)) {
+      formattedSubfolder = formattedSubfolder.substring(1);
+    }
+    return Directory('$path${Platform.pathSeparator}$subfolder');
+  }
 
-  File getFile(String filename) =>
-      File('$path${Platform.pathSeparator}$filename');
+  File getFile(String filename) {
+    var formattedFilename = filename.pathEncoded;
+    if (formattedFilename.startsWith(Platform.pathSeparator)) {
+      formattedFilename = formattedFilename.substring(1);
+    }
+    return File('$path${Platform.pathSeparator}$formattedFilename');
+  }
 
   static Directory fromUrlEncoded(String path) =>
       Directory(path.replaceAll('/', Platform.pathSeparator));
@@ -28,7 +40,7 @@ extension FileEntityParams on FileSystemEntity {
   }
 
   String getSubPathUrlEncoded(FileSystemEntity parent) =>
-      getSubPath(parent).replaceAll(Platform.pathSeparator, '/');
+      getSubPath(parent).urlEncoded;
 }
 
 extension FileExtension on File {
