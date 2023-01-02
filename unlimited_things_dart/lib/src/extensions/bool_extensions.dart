@@ -1,6 +1,7 @@
 import 'dart:async';
 
-import 'package:unlimited_things/src/dart/types/function_typedefs.dart';
+import '../types/function_typedefs.dart';
+
 
 
 extension ConditionalResultExtension on bool {

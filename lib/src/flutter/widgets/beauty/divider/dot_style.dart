@@ -1,7 +1,6 @@
 import 'dart:math';
 
 import 'package:flutter/widgets.dart';
-import 'package:unlimited_things/src/dart/types/function_typedefs.dart';
 import 'package:unlimited_things/src/flutter/widgets/beauty/divider/types/divider_direction.dart';
 import 'package:unlimited_things/src/flutter/widgets/beauty/divider/types/relative_param.dart';
 

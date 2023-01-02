@@ -1,0 +1,11 @@
+name: unlimited_things_dart
+description: Dart package that provides different type of usefully things for your project
+version: 0.0.1
+homepage: https://github.com/crifurch/unlimited_things
+
+environment:
+  sdk: '>=2.18.5 <3.0.0'
+
+dev_dependencies:
+  lints: ^2.0.0
+  test: ^1.16.0
