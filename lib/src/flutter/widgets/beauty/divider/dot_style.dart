@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/widgets.dart';
 import 'package:unlimited_things/src/flutter/widgets/beauty/divider/types/divider_direction.dart';
 import 'package:unlimited_things/src/flutter/widgets/beauty/divider/types/relative_param.dart';
+import 'package:unlimited_things_dart/unlimited_things_dart.dart';
 
 @immutable
 abstract class DotTransformer {

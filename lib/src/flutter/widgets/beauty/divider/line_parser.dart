@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:unlimited_things/src/dart/types/function_typedefs.dart';
+import 'package:unlimited_things_dart/unlimited_things_dart.dart';
 
 class LineParser {
   final double _length;
