@@ -7,10 +7,10 @@ import 'package:flutter/rendering.dart';
 
 class InnerShadow extends SingleChildRenderObjectWidget {
   const InnerShadow({
-    Key? key,
+    super.key,
     this.shadows = const <Shadow>[],
-    Widget? child,
-  }) : super(key: key, child: child);
+    super.child,
+  });
 
   final List<Shadow> shadows;
 

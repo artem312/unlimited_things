@@ -1,13 +1,12 @@
 import 'dart:convert';
 
 class DartEncoder extends JsonEncoder {
-  const DartEncoder([Object? Function(dynamic object)? toEncodable])
-      : super(toEncodable);
+  const DartEncoder([super.toEncodable]);
 
   const DartEncoder.withIndent(
-    String indent, [
-    Object? Function(dynamic object)? toEncodable,
-  ]) : super.withIndent(indent, toEncodable);
+    String super.indent, [
+    super.toEncodable,
+  ]) : super.withIndent();
 
   @override
   String convert(dynamic object) {

@@ -10,6 +10,7 @@ typedef TabHeaderBuilder = Widget Function(
   BuildContext context,
   String name,
   int index,
+  // ignore: avoid_positional_boolean_parameters
   bool selected,
 );
 

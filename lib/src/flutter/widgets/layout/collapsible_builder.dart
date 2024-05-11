@@ -5,6 +5,7 @@ class CollapsibleBuilder extends StatefulWidget {
   final bool collapsed;
   final bool haveScrollableBody;
   final Widget Function(BuildContext context) builder;
+  // ignore: avoid_positional_boolean_parameters
   final Widget Function(BuildContext context, bool collapsed) headerBuilder;
   final CrossAxisAlignment crossAxisAlignment;
 
