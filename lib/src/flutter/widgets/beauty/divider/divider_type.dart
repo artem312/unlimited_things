@@ -1,4 +1,3 @@
-
 import 'package:flutter/widgets.dart';
 import 'package:unlimited_things/src/flutter/widgets/beauty/divider/dot_style.dart';
 import 'package:unlimited_things/src/flutter/widgets/beauty/divider/line_parser.dart';
@@ -38,10 +37,7 @@ abstract class DividerType {
 
   @override
   bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is DividerType &&
-          runtimeType == other.runtimeType &&
-          lineType == other.lineType;
+      identical(this, other) || other is DividerType && runtimeType == other.runtimeType && lineType == other.lineType;
 
   @override
   int get hashCode => lineType.hashCode;
@@ -132,9 +128,7 @@ class DividerTypeDashed extends DividerType {
     parser.draw(forDash: (offset, length) {
       lineType.drawLine(
         canvas,
-        getOffset(1).dx == 0
-            ? DividerDirection.vertical
-            : DividerDirection.horizontal,
+        getOffset(1).dx == 0 ? DividerDirection.vertical : DividerDirection.horizontal,
         getOffset(offset),
         length,
         paint,
@@ -148,7 +142,7 @@ class DividerTypeDashed extends DividerType {
       canvas,
       paint,
       _parseLength(length),
-          (value) => Offset(value, 0),
+      (value) => Offset(value, 0),
     );
   }
 
@@ -172,8 +166,7 @@ class DividerTypeDashed extends DividerType {
           startFrom == other.startFrom;
 
   @override
-  int get hashCode =>
-      lineType.hashCode ^ lineParams.hashCode ^ startFrom.hashCode;
+  int get hashCode => lineType.hashCode ^ lineParams.hashCode ^ startFrom.hashCode;
 }
 
 class DividerTypeDotted extends DividerTypeDashed {
@@ -226,13 +219,13 @@ class DividerTypeDotted extends DividerTypeDashed {
       canvas,
       paint,
       parsedLength,
-          (value) => Offset(value, 0),
+      (value) => Offset(value, 0),
     );
     _drawArray(
       canvas,
       paint,
       parsedLength,
-          (value) => Offset(value, 0),
+      (value) => Offset(value, 0),
     );
   }
 
@@ -264,9 +257,5 @@ class DividerTypeDotted extends DividerTypeDashed {
           dots == other.dots;
 
   @override
-  int get hashCode =>
-      lineType.hashCode ^
-      lineParams.hashCode ^
-      startFrom.hashCode ^
-      dots.hashCode;
+  int get hashCode => lineType.hashCode ^ lineParams.hashCode ^ startFrom.hashCode ^ dots.hashCode;
 }

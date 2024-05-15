@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:unlimited_things/src/flutter/widgets/beauty/divider/divider_style.dart';
@@ -24,24 +23,16 @@ class PrettyDivider extends SingleChildRenderObjectWidget {
   @override
   RenderObject createRenderObject(BuildContext context) => RenderConstrainedBox(
         additionalConstraints: BoxConstraints.tightFor(
-          width: style.direction == DividerDirection.horizontal
-              ? double.infinity
-              : _thickness,
-          height: style.direction == DividerDirection.vertical
-              ? double.infinity
-              : _thickness,
+          width: style.direction == DividerDirection.horizontal ? double.infinity : _thickness,
+          height: style.direction == DividerDirection.vertical ? double.infinity : _thickness,
         ),
       );
 
   void _updateRenderObject(RenderConstrainedBox renderObject) {
     renderObject
       ..additionalConstraints = BoxConstraints.tightFor(
-        width: style.direction == DividerDirection.horizontal
-            ? double.infinity
-            : _thickness,
-        height: style.direction == DividerDirection.vertical
-            ? double.infinity
-            : _thickness,
+        width: style.direction == DividerDirection.horizontal ? double.infinity : _thickness,
+        height: style.direction == DividerDirection.vertical ? double.infinity : _thickness,
       )
       ..markNeedsLayout();
   }
@@ -54,4 +45,3 @@ class PrettyDivider extends SingleChildRenderObjectWidget {
     _updateRenderObject(renderObject);
   }
 }
-
